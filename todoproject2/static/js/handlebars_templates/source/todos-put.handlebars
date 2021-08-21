@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row py-2">
+    <div class="col">
+      Update todo
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col">
+      <form action='{{url}}' method='put' id="form" data-model_url="todos/" data-model="todos">
+        <div classs="form-row">
+        <input type='hidden' name='id' value='{{item.id}}' class="form-control"/>
+        <input type='text' name='name' value='{{item.name}}' class="form-control"/>
+      </div>
+      <div class="form-row">
+        {{#makeSelectBox "category" item.category categories}}
+        {{/makeSelectBox}}
+      </div>
+      <div class="form-row">
+        {{#makeSelectBoxMultiple "tags" item.tags tags}}
+        {{/makeSelectBoxMultiple}}
+      </div>
+      <div class="row py-2">
+        <div class="col">
+        <input type='submit' name='sumbit' value='update' class="btn btn-primary"/>
+      </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

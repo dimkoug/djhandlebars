@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row py-2">
+    <div class="col">
+      register user
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col">
+      <form action='/todo/api/register/' method='post' id="register-form">
+        <div classs="form-row">
+          <label>Username</label>
+          <input type='text' name='username' value='' class="form-control"/>
+        </div>
+        <div classs="form-row">
+          <label>email</label>
+          <input type='text' name='email' value='' class="form-control"/>
+        </div>
+        <div classs="form-row">
+          <label>password</label>
+          <input type='password' name='password' value='' class="form-control"/>
+        </div>
+        <div classs="form-row">
+          <label>confirm password</label>
+          <input type='password' name='password1' value='' class="form-control"/>
+        </div>
+        <div classs="form-row">
+          <label>first name</label>
+          <input type='text' name='first_name' value='' class="form-control"/>
+        </div>
+        <div classs="form-row">
+          <label>last name</label>
+          <input type='text' name='last_name' value='' class="form-control"/>
+        </div>
+        <div class="row py-2">
+          <div class="col">
+            <input type='submit' name='sumbit' value='register' class="btn btn-primary"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

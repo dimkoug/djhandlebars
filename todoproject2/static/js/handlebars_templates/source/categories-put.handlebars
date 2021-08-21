@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row py-2">
+    <div class="col">
+      Update category
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col">
+      <form action='{{url}}' method='put' id="form" data-model_url="categories/" data-model="categories">
+        <div classs="form-row">
+        <input type='hidden' name='id' value='{{item.id}}' class="form-control"/>
+        <input type='text' name='name' value='{{item.name}}' class="form-control"/>
+      </div>
+      <div class="row py-2">
+        <div class="col">
+        <input type='submit' name='sumbit' value='update' class="btn btn-primary"/>
+      </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
