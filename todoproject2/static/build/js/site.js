@@ -278,7 +278,7 @@
       var model = $(this).data('model');
       var formData = $(this).serialize();
       var token = localStorage.token;
-      headers = {
+      var headers = {
           'X-CSRFToken': csrftoken,
           'Authorization': "JWT " + token
       };
@@ -291,7 +291,7 @@
       })).then(function( response, textStatus, jqXHR ) {
         var data = response;
         $("#form")[0].reset();
-        var url = root_url + url
+        var url = root_url + model + '/';
         get_data(url, model);
       }).catch(function(err){
         alert(JSON.stringify(err.responseText));
