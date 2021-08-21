@@ -158,7 +158,7 @@
             var model = $(this).data("model");
             var action = $(this).data("action");
             var data = {};
-            if(model == 'todo'){
+            if(model == 'todos'){
               categories_url = root_url + 'categories/?page_size='+ page_size;
               category_model = 'categories';
               $.when(load_data(categories_url, category_model)).then(function(data, textStatus, jqXHR){

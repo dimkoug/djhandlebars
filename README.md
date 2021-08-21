@@ -1,4 +1,4 @@
-# djproject
+# djhandlebars
 Django rest todo  project with handlebars.
 
 Quick start
