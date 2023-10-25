@@ -19,23 +19,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from rest_framework.authtoken import views as api_views
+from rest_framework_simplejwt import views as jwt_views
 
-from rest_framework_jwt.views import (
-  obtain_jwt_token, refresh_jwt_token, verify_jwt_token
-)
-
-from .views import IndexView
+from .views import IndexView, get_categories,get_tags
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
-    path('todo/api/', include('todo.api.routers')),
+    path('categories/', get_categories, name='get-categories'),
+    path('tags/', get_tags, name='get-tags'),
+    path('api/', include('todos.api.routers')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth/', obtain_jwt_token),
-    path('api-token-refresh/', refresh_jwt_token),
-    path('api-token-verify/', verify_jwt_token),
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(),
+         name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(),
+         name='token_refresh'),
     path('admin/', admin.site.urls),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(

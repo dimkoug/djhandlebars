@@ -1,0 +1,24 @@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Todo Add</h5>
+                <div class="row">  
+                    <form action="{{url}}" method="{{data.method}}" id="form" data-model="{{model}}"  data-collection="{{data.collection}}">
+                        <input type="hidden" id="id" value="{{data.obj.id}}" name='id'>
+                        <select name="category" id="category" data-url='/categories/' data-selected={{data.obj.category}}>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                          </select>
+                        <input type="text" id="name" value="{{data.obj.name}}" name='name'>
+                        <select name="tags" id="tags"  data-url='/tags/' multiple data-selected='{{data.tags}}'>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>

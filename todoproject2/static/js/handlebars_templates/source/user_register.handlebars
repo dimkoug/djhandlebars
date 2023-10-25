@@ -6,30 +6,30 @@
   </div>
   <div class="row py-2">
     <div class="col">
-      <form action='/todo/api/register/' method='post' id="register-form">
+      <form class="register" action='/api/register/' data-model="user" data-method="post" method='post' id="form">
         <div classs="form-row">
           <label>Username</label>
-          <input type='text' name='username' value='' class="form-control"/>
+          <input type='text' name='username' value='' id="id_username" class="form-control"/>
         </div>
         <div classs="form-row">
           <label>email</label>
-          <input type='text' name='email' value='' class="form-control"/>
+          <input type='text' name='email' value='' id="id_email" class="form-control"/>
         </div>
         <div classs="form-row">
           <label>password</label>
-          <input type='password' name='password' value='' class="form-control"/>
+          <input type='password' name='password' value='' id="id_password" class="form-control"/>
         </div>
         <div classs="form-row">
           <label>confirm password</label>
-          <input type='password' name='password1' value='' class="form-control"/>
+          <input type='password' name='password2' value='' id="id_password2" class="form-control"/>
         </div>
         <div classs="form-row">
           <label>first name</label>
-          <input type='text' name='first_name' value='' class="form-control"/>
+          <input type='text' name='first_name' value='' id="id_first_name" class="form-control"/>
         </div>
         <div classs="form-row">
           <label>last name</label>
-          <input type='text' name='last_name' value='' class="form-control"/>
+          <input type='text' name='last_name' value='' id="id_last_name" class="form-control"/>
         </div>
         <div class="row py-2">
           <div class="col">

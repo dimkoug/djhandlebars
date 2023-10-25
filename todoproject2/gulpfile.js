@@ -20,10 +20,6 @@ function css(){
 
 function vendor(){
   return gulp.src([
-        './static/js/jquery-3.6.0.min.js',
-        './static/js/popper.min.js',
-        './static/js/bootstrap.min.js',
-        './static/js/handlebars.js',
         './static/js/django_ajax.js',
       ])
      .pipe(concat('vendor.js'))
@@ -34,7 +30,11 @@ function vendor(){
 
 function js(){
   return gulp.src([
-        './static/js/site.js',
+        './static/js/base.js',
+        './static/js/create.js',
+        './static/js/form.js',
+        './static/js/list.js',
+        './static/js/update_delete.js',
       ])
      .pipe(concat('site.js'))
      .pipe(minify())

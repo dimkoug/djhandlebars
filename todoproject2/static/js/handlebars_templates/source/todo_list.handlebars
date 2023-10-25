@@ -1,0 +1,70 @@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Todos</h5>
+                <div class="row py-2">
+                    <div class="col">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{url}}" data-model="{{model}}" class='create-link btn btn-primary' data-action='form' data-method='post'>Add</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Category</th>
+                                    <th>Name</th>
+                                    <th>Tags</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each data.results}}
+                                    <tr>
+                                        <td>{{this.id}}</td>
+                                        <td>{{this.category}}</td>
+                                        <td>{{this.name}}</td>
+                                        <td>
+                                            <ul>
+                                            {{#each this.tags}}
+                                            
+                                                <li>{{this.name}}</li>
+                                            {{/each}}
+                                            </ul>
+
+
+
+
+                                        </td>
+                                        <td>
+                                            <a href="{{this.url}}" data-model="todo" data-action='form' data-collection='/api/todos/' data-method="put" class='update'><i class="bi bi-pencil-square text-warning"></i></a>
+                                            <a href="{{this.url}}" data-confirm="Delete {{this.name}}; " data-model="todo" data-action='delete'  data-collection='/api/todos/' data-method='delete' class='delete'><i class="bi bi-x text-danger"></i></a>
+                                        
+                                        </td>
+                                        
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {{#if data.previous}}
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <a href="{{data.previous}}" data-model="{{model}}" class='api-link' data-action='list' data-method='get'>Previous</a>
+                            </div>
+                        {{/if}}
+                    </div>
+                    <div class="col-6">
+                        {{#if data.next}}
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="{{data.next}}" data-model="{{model}}" class='api-link' data-action='list' data-method='get'>Next</a>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>

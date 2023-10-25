@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!--<script src="/static/js/django_ajax.js"></script>-->
+    <script src="/static/js/templates-min.js"></script>
+    <script src="/static/js/vendor-min.js"></script>
+    <script src="/static/js/site-min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Django REST Todo with Handlebars</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item register">
+                <a class="nav-link api-link register" data-model="user" data-action="register" id="register" href="/api/register/">register</a>
+              </li>
+              <li class="nav-item">
+                <a href="/api/categories/" data-model="category" class='api-link nav-link' data-url="/api/categories/" data-action='list' data-method='get'>Categories</a>
+              </li>
+              <li class="nav-item">
+                <a href="/api/tags/" data-model="tag" class='api-link nav-link' data-action='list' data-method='get'>Tags</a>
+              </li>
+              <li class="nav-item tags">
+                <a href="/api/todos/" data-model="todo" class='api-link nav-link' data-action='list' data-method='get'>Todos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link logout" id="logout" href="#">Logout</a>
+              </li>
+              <li class="nav-item login_url">
+                <a class="nav-link api-link login" data-model="user" data-action="login" id="login_url" href="/api/token/">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+    <div class="container mt-2 py-2">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                <div id="content"></div>
+            </div>
+        </div>
+    </div>
+     
+
+
+
+<!---<script src="/static/js/base.js"></script>
+<script src="/static/js/list.js"></script>
+<script src="/static/js/form.js"></script>
+<script src="/static/js/create.js"></script>
+<script src="/static/js/update_delete.js"></script>--->
+    
+</body>
+</html>

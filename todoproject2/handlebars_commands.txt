@@ -1,0 +1,16 @@
+to recompile  the handlebars templates
+
+enter in the folder todoproject2/static/js/source  and run the commands
+
+
+handlebars tags_list.handlebars -f ../compiled/tags_list.js
+handlebars tags_create_form.handlebars -f ../compiled/tags_create_form.js
+handlebars tags_put.handlebars -f ../compiled/tags_put.js
+handlebars categories_list.handlebars -f ../compiled/categories_list.js
+handlebars categories_create_form.handlebars -f ../compiled/categories_create_form.js
+handlebars categories_put.handlebars -f ../compiled/categories_put.js
+handlebars todos_list.handlebars -f ../compiled/todos_list.js
+handlebars todos_create_form.handlebars -f ../compiled/todos_create_form.js
+handlebars todos_put.handlebars -f ../compiled/todos_put.js
+handlebars user_login.handlebars -f ../compiled/user_login.js
+handlebars user_register.handlebars -f ../compiled/user_register.js
