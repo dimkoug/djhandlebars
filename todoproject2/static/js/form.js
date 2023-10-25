@@ -10,26 +10,51 @@
             let collection = $(this).data("collection");
             let full_link = BASE_URL + link;
             e.preventDefault();
-            await $.when($.ajax({
-                url: link,
-                data: $(this).serialize(),
-                type:  method,
-                headers:{"Authorization": "JWT " + localStorage.token}
-                
-              })).then(function( response, textStatus, jqXHR ) {
-                console.info(response);
-                if(response.access){
-                    localStorage.token = response.access;
-                    logged_in();
-                }
-             
-            }).catch(function(err){
-                $.each(err.responseJSON, function(index, value){
-                    console.info(index, value);
-                    $('#id_'+ index).addClass('is-invalid');
-                    $('#id_'+ index).after("<div class='invalid-feedback'>" + value + "</div>");
-                });
-            })
+            if(localStorage.token){
+                await $.when($.ajax({
+                    url: link,
+                    data: $(this).serialize(),
+                    type:  method,
+                    headers:{"Authorization": "JWT " + localStorage.token}
+                    
+                  })).then(function( response, textStatus, jqXHR ) {
+                    console.info(response);
+                    if(response.access){
+                        localStorage.token = response.access;
+                        logged_in();
+                    }
+                 
+                }).catch(function(err){
+                    $.each(err.responseJSON, function(index, value){
+                        console.info(index, value);
+                        $('#id_'+ index).addClass('is-invalid');
+                        $('#id_'+ index).after("<div class='invalid-feedback'>" + value + "</div>");
+                    });
+                })
+
+            }
+            else{
+                await $.when($.ajax({
+                    url: link,
+                    data: $(this).serialize(),
+                    type:  method
+                })).then(function( response, textStatus, jqXHR ) {
+                    console.info(response);
+                    if(response.access){
+                        localStorage.token = response.access;
+                        logged_in();
+                    }
+                 
+                }).catch(function(err){
+                    $.each(err.responseJSON, function(index, value){
+                        console.info(index, value);
+                        $('#id_'+ index).addClass('is-invalid');
+                        $('#id_'+ index).after("<div class='invalid-feedback'>" + value + "</div>");
+                    });
+                })                
+            }
+            
+
             if(model !== 'user'){
                 if(collection){
                     await get_data(collection);

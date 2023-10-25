@@ -30,7 +30,13 @@ async function generate_template(model,action,data,url){
     }
     else {
         model = 'user'
-        template = templates['user_login'];
+        if(action === 'register'){
+            template = templates[model + "_" + action];
+        }
+        else{
+            template = templates[model + "_login"];
+        }
+        
         finalTemplate = template({model:model});
     }
 
