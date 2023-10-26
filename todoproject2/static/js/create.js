@@ -14,13 +14,7 @@
             await generate_template(model,action,response,link);
             return false;
         })
-
-
-
     })
-
-
-
 })(window,document,jQuery)
 
 
