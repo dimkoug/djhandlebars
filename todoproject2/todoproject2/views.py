@@ -23,8 +23,6 @@ def get_categories(request):
     data = Category.objects.all().values('id', 'name')
     for d in data:
         results.append({'id':d['id'], "text": d['name']})
-    # j_data = serializers.serialize("json", data, fields=('erp_code', 'title'))
-    # return JsonResponse(j_data, safe=False)
     return JsonResponse({"results": results}, safe=False)
 
 @api_view(['GET'])
@@ -38,8 +36,6 @@ def get_tags(request):
     data = Tag.objects.all().values('id', 'name')
     for d in data:
         results.append({'id':d['id'], "text": d['name']})
-    # j_data = serializers.serialize("json", data, fields=('erp_code', 'title'))
-    # return JsonResponse(j_data, safe=False)
     return JsonResponse({"results": results}, safe=False)
 
 
@@ -61,8 +57,6 @@ def get_categories_for_sb(request):
         ).values('id', 'name')
         for d in data:
             results.append({'id':d['id'], "text": d['name']})
-        # j_data = serializers.serialize("json", data, fields=('erp_code', 'title'))
-        # return JsonResponse(j_data, safe=False)
     return JsonResponse({"results": results}, safe=False)
 
 @api_view(['GET'])
@@ -80,6 +74,4 @@ def get_tags_for_sb(request):
         ).values('id', 'name')
         for d in data:
             results.append({'id':d['id'], "text": d['name']})
-        # j_data = serializers.serialize("json", data, fields=('erp_code', 'title'))
-        # return JsonResponse(j_data, safe=False)
     return JsonResponse({"results": results}, safe=False)
