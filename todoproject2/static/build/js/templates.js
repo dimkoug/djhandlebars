@@ -64,9 +64,9 @@ this["app"]["templates"]["category_form"] = Handlebars.template({"compiler":[8,"
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"collection") : stack1), depth0))
     + "\">\r\n                        <input type=\"hidden\" id=\"id\" value=\""
     + alias4(alias5(((stack1 = ((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"obj") : stack1)) != null ? lookupProperty(stack1,"id") : stack1), depth0))
-    + "\" name='id'>\r\n                        <input type=\"text\" id=\"name\" value=\""
+    + "\" name='id'>\r\n                        <div class=\"mb-3\"><input type=\"text\" class=\"form-control\" id=\"id_name\" value=\""
     + alias4(alias5(((stack1 = ((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"obj") : stack1)) != null ? lookupProperty(stack1,"name") : stack1), depth0))
-    + "\" name='name'>\r\n                        <button type=\"submit\">Save</button>\r\n                    </form>\r\n                </div>\r\n\r\n            </div>\r\n        </div>";
+    + "\" name='name' placeholder=\"name\"></div>\r\n                        <div class=\"d-grid gap-2 d-md-flex justify-content-md-end\">\r\n                            <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>";
 },"useData":true});
 this["app"]["templates"]["category_list"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
