@@ -10,7 +10,7 @@
             let model = $(this).data('model');
             let action = $(this).data('action');
             let method = $(this).data('method');
-            let response = {url:link,model:model,method:method};
+            let response = {url:link,model:model,method:method,collection:link};
             await generate_template(model,action,response,link);
             return false;
         })

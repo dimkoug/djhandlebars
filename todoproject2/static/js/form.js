@@ -10,7 +10,9 @@
             let collection = $(this).data("collection");
             let full_link = BASE_URL + link;
             e.preventDefault();
-            if(localStorage.token){
+            console.info(localStorage.token);
+            if(localStorage.token !== null && model !== 'user'){
+                console.info(model);
                 await $.when($.ajax({
                     url: link,
                     data: $(this).serialize(),
@@ -19,11 +21,7 @@
                     
                   })).then(function( response, textStatus, jqXHR ) {
                     console.info(response);
-                    if(response.access){
-                        localStorage.token = response.access;
-                        logged_in();
-                    }
-                 
+                
                 }).catch(function(err){
                     $.each(err.responseJSON, function(index, value){
                         console.info(index, value);
@@ -33,7 +31,7 @@
                 })
 
             }
-            else{
+            if(model === 'user'){
                 await $.when($.ajax({
                     url: link,
                     data: $(this).serialize(),
@@ -74,7 +72,7 @@
                 
             }
 
-            return false;
+            return await false;
         })
 
 

@@ -205,7 +205,7 @@ $(d).ready(function(){
             let model = $(this).data('model');
             let action = $(this).data('action');
             let method = $(this).data('method');
-            let response = {url:link,model:model,method:method};
+            let response = {url:link,model:model,method:method,collection:link};
             await generate_template(model,action,response,link);
             return false;
         })
@@ -226,7 +226,9 @@ $(d).ready(function(){
             let collection = $(this).data("collection");
             let full_link = BASE_URL + link;
             e.preventDefault();
-            if(localStorage.token){
+            console.info(localStorage.token);
+            if(localStorage.token !== null && model !== 'user'){
+                console.info(model);
                 await $.when($.ajax({
                     url: link,
                     data: $(this).serialize(),
@@ -235,11 +237,7 @@ $(d).ready(function(){
                     
                   })).then(function( response, textStatus, jqXHR ) {
                     console.info(response);
-                    if(response.access){
-                        localStorage.token = response.access;
-                        logged_in();
-                    }
-                 
+                
                 }).catch(function(err){
                     $.each(err.responseJSON, function(index, value){
                         console.info(index, value);
@@ -249,7 +247,7 @@ $(d).ready(function(){
                 })
 
             }
-            else{
+            if(model === 'user'){
                 await $.when($.ajax({
                     url: link,
                     data: $(this).serialize(),
@@ -290,7 +288,7 @@ $(d).ready(function(){
                 
             }
 
-            return false;
+            return await false;
         })
 
 
