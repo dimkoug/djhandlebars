@@ -1,6 +1,10 @@
 this["app"] = this["app"] || {};
 this["app"]["templates"] = this["app"]["templates"] || {};
-this["app"]["templates"]["category_form"] = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+this["app"]["templates"]["category_form"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "                        Update\r\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "                        Create\r\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -8,12 +12,14 @@ this["app"]["templates"]["category_form"] = Handlebars.template({"compiler":[8,"
         return undefined
     };
 
-  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Categories Add</h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":5,"column":34},"end":{"line":5,"column":41}}}) : helper)))
+  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n\r\n                <h5 class=\"card-title\">Categories\r\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"obj") : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":5,"column":20},"end":{"line":9,"column":27}}})) != null ? stack1 : "")
+    + "                </h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":12,"column":34},"end":{"line":12,"column":41}}}) : helper)))
     + "\" method=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"method") : stack1), depth0))
     + "\" id=\"form\" data-model=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":5,"column":90},"end":{"line":5,"column":99}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":12,"column":90},"end":{"line":12,"column":99}}}) : helper)))
     + "\"  data-collection=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"collection") : stack1), depth0))
     + "\">\r\n                        <input type=\"hidden\" id=\"id\" value=\""
@@ -87,7 +93,11 @@ this["app"]["templates"]["category_list"] = Handlebars.template({"1":function(co
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"next") : stack1),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":48,"column":24},"end":{"line":52,"column":31}}})) != null ? stack1 : "")
     + "                    </div>\r\n                </div>\r\n            </div>\r\n        </div>";
 },"useData":true});
-this["app"]["templates"]["tag_form"] = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+this["app"]["templates"]["tag_form"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "\r\n                        Update\r\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "                        Create\r\n                    ";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -95,12 +105,14 @@ this["app"]["templates"]["tag_form"] = Handlebars.template({"compiler":[8,">= 4.
         return undefined
     };
 
-  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Tag Add</h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":5,"column":34},"end":{"line":5,"column":41}}}) : helper)))
+  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Tag"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"obj") : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":3,"column":42},"end":{"line":7,"column":27}}})) != null ? stack1 : "")
+    + "</h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":9,"column":34},"end":{"line":9,"column":41}}}) : helper)))
     + "\" method=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"method") : stack1), depth0))
     + "\" id=\"form\" data-model=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":5,"column":90},"end":{"line":5,"column":99}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":9,"column":90},"end":{"line":9,"column":99}}}) : helper)))
     + "\"  data-collection=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"collection") : stack1), depth0))
     + "\">\r\n                        <input type=\"hidden\" id=\"id\" value=\""
@@ -174,7 +186,11 @@ this["app"]["templates"]["tag_list"] = Handlebars.template({"1":function(contain
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"next") : stack1),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":47,"column":24},"end":{"line":51,"column":31}}})) != null ? stack1 : "")
     + "                    </div>\r\n                </div>\r\n            </div>\r\n        </div>";
 },"useData":true});
-this["app"]["templates"]["todo_form"] = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+this["app"]["templates"]["todo_form"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "\r\n                        Update\r\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "                        Create\r\n                    ";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -182,12 +198,14 @@ this["app"]["templates"]["todo_form"] = Handlebars.template({"compiler":[8,">= 4
         return undefined
     };
 
-  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Todo Add</h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":5,"column":34},"end":{"line":5,"column":41}}}) : helper)))
+  return "        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Todo"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"obj") : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":3,"column":43},"end":{"line":7,"column":27}}})) != null ? stack1 : "")
+    + "</h5>\r\n                <div class=\"row\">  \r\n                    <form action=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"url") || (depth0 != null ? lookupProperty(depth0,"url") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data,"loc":{"start":{"line":9,"column":34},"end":{"line":9,"column":41}}}) : helper)))
     + "\" method=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"method") : stack1), depth0))
     + "\" id=\"form\" data-model=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":5,"column":90},"end":{"line":5,"column":99}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"model") || (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"model","hash":{},"data":data,"loc":{"start":{"line":9,"column":90},"end":{"line":9,"column":99}}}) : helper)))
     + "\"  data-collection=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"data") : depth0)) != null ? lookupProperty(stack1,"collection") : stack1), depth0))
     + "\">\r\n                        <input type=\"hidden\" id=\"id\" value=\""

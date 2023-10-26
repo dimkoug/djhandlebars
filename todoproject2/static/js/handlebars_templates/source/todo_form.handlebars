@@ -1,6 +1,10 @@
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Todo Add</h5>
+                <h5 class="card-title">Todo{{#if data.obj}}
+                        Update
+                    {{else}}
+                        Create
+                    {{/if}}</h5>
                 <div class="row">  
                     <form action="{{url}}" method="{{data.method}}" id="form" data-model="{{model}}"  data-collection="{{data.collection}}">
                         <input type="hidden" id="id" value="{{data.obj.id}}" name='id'>
