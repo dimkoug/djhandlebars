@@ -105,10 +105,19 @@ class TodoTagSerializer(serializers.ModelSerializer):
 
 class TodoSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, read_only=True)
+    category_name = serializers.SerializerMethodField(source='get_category_name')
     class Meta:
         model = Todo
-        fields = ['id','url', 'name', 'category',"tags"]
+        fields = ['id','url', 'name', 'category',"tags", 'category_name']
         extra_kwargs = {'tagsdata': {'required': False}}
     
     def post(validated_data):
         return Todo.objects.create(**validated_data)
+    
+    def get_category_name(self, obj):
+        return obj.category.name
+    
+    # def to_representation(self, instance):
+    #     rep = super().to_representation(instance)
+    #     rep['category'] = instance.category.name
+    #     return rep

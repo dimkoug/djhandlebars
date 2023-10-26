@@ -211,7 +211,7 @@ this["app"]["templates"]["todo_list"] = Handlebars.template({"1":function(contai
   return "                                    <tr>\r\n                                        <td>"
     + alias2(alias1((depth0 != null ? lookupProperty(depth0,"id") : depth0), depth0))
     + "</td>\r\n                                        <td>"
-    + alias2(alias1((depth0 != null ? lookupProperty(depth0,"category") : depth0), depth0))
+    + alias2(alias1((depth0 != null ? lookupProperty(depth0,"category_name") : depth0), depth0))
     + "</td>\r\n                                        <td>"
     + alias2(alias1((depth0 != null ? lookupProperty(depth0,"name") : depth0), depth0))
     + "</td>\r\n                                        <td>\r\n                                            <ul>\r\n"
