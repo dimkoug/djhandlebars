@@ -220,6 +220,9 @@ $(d).ready(function(){
     $(d).ready(function(){
         $('body').on('submit', '#form',async function(e){
             let link = $(this).attr('action');
+            let error = false;
+            $('body').removeClass('is-invalid');
+            $('body').find('.invalid-feedback').remove();
             let klass = $(this).attr('class');
             let model = $(this).data('model');
             let method = $(this).attr("method");
@@ -233,14 +236,21 @@ $(d).ready(function(){
                     url: link,
                     data: $(this).serialize(),
                     type:  method,
-                    headers:{"Authorization": "JWT " + localStorage.token}
+                    headers:{"Authorization": "JWT " + localStorage.token},
+                    statusCode: {
+                        400: function() {
+                          error=true;
+                        }
+                      }
                     
                   })).then(function( response, textStatus, jqXHR ) {
                     console.info(response);
                 
                 }).catch(function(err){
+                    error = true;
                     $.each(err.responseJSON, function(index, value){
                         console.info(index, value);
+                        
                         $('#id_'+ index).addClass('is-invalid');
                         $('#id_'+ index).after("<div class='invalid-feedback'>" + value + "</div>");
                     });
@@ -260,6 +270,7 @@ $(d).ready(function(){
                     }
                  
                 }).catch(function(err){
+                    error = true;
                     $.each(err.responseJSON, function(index, value){
                         console.info(index, value);
                         $('#id_'+ index).addClass('is-invalid');
@@ -276,13 +287,24 @@ $(d).ready(function(){
                 else{
                     await get_data(link);
                 }
+
+                if(!error){
+                    console.info("error");
+                    await generate_template(model,'list',data,link);
+                }
                 
-                await generate_template(model,'list',data,link);
+                
+                
 
 
             }
             else{
-                w.location = '/';
+                
+                if(!error){
+                    console.info("error");
+                    w.location = '/';
+                }
+                
                 
 
                 
