@@ -6,6 +6,7 @@ const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
+var browserSync = require('browser-sync').create();
 var declare = require('gulp-declare');
 var concat = require('gulp-concat');
 
@@ -55,6 +56,16 @@ function templates(){
         // .pipe(rename({extname:'.min.js'}))
         .pipe(gulp.dest('./static/build/js'));
 }
+
+
+// gulp.task('django', function() {
+//     browserSync.init({
+//       server: "mysite",
+//       port: 8009
+//     });
+//   });
+
+
 
 
 exports.css = css;
