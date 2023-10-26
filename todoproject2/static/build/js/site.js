@@ -365,12 +365,14 @@ $(d).ready(function(){
         $('body').on('click', '.update, .delete', async function(e){
             e.preventDefault();
             let link = $(this).attr('href');
-            let cls = $(this).attr('class')
+            let cls = $(this).attr('class');
+            let error = false;
             let model = $(this).data('model');
             let action = $(this).data('action');
             let method = $(this).data('method');
             let collection = $(this).data('collection');
-            console.info(collection);
+            $('body').removeClass('is-invalid');
+            $('body').find('.invalid-feedback').remove();
             let data_obj = {url:link,model:model,method:method,collection:collection};
             if(cls==='update'){
                 await $.when($.ajax({
@@ -390,6 +392,7 @@ $(d).ready(function(){
                     
             
                 }).catch(function(err){
+                    error = true;
                     $.each(err.responseJSON, function(index, value){
                         console.info(index, value);
                         $('#id_'+ index).addClass('is-invalid');
@@ -397,7 +400,7 @@ $(d).ready(function(){
                     });
                 })
                 data_obj['method'] = 'put';
-                console.info(data_obj)
+                console.info(data_obj);
                 await generate_template(model,'form',data_obj,link);
         
             }
@@ -408,6 +411,7 @@ $(d).ready(function(){
                         method: 'delete',
                         datatype: 'json',
                       })).catch(function(err){
+                        error = true;
                         $.each(err.responseJSON, function(index, value){
                             console.info(index, value);
                             $('#id_'+ index).addClass('is-invalid');
@@ -418,7 +422,13 @@ $(d).ready(function(){
                 if(collection){
                     await get_data(collection);
                 }
-                await generate_template(model,'list',data,collection);
+
+                if(!error){
+                    console.info("error");
+                    await generate_template(model,'list',data,collection);
+                }
+
+                
         
         
                 }
