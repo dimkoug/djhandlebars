@@ -4,20 +4,30 @@
                 <div class="row">  
                     <form action="{{url}}" method="{{data.method}}" id="form" data-model="{{model}}"  data-collection="{{data.collection}}">
                         <input type="hidden" id="id" value="{{data.obj.id}}" name='id'>
-                        <select name="category" id="category" data-url='/categories/' data-selected={{data.obj.category}}>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                          </select>
-                        <input type="text" id="name" value="{{data.obj.name}}" name='name'>
-                        <select name="tags" id="tags"  data-url='/tags/' multiple data-selected='{{data.tags}}'>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <button type="submit">Save</button>
+                        <div class="mb-3">
+                            <label for="id_category" class="form-label">Category</label>
+                            <select class="form-control" name="category" id="id_category" data-url='/categories/' data-selected={{data.obj.category}}>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="id_name" value="{{data.obj.name}}" name='name' placeholder="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_tags" class="form-label">Tags</label>
+                            <select class="form-control" name="tags" id="id_tags"  data-url='/tags/' multiple data-selected='{{data.tags}}'>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
                     </form>
                 </div>
             </div>
